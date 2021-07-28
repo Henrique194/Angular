@@ -1,0 +1,7 @@
+<div class="card">
+    <p style="font-size: 16px;">{{ product?.name }}</p>
+    <hr>
+    <h3>Por: {{ product?.price }}</h3>
+    <hr>
+    <img [src]=product?.img [ngClass]="{'dell': product?.identifier === 'DELL', 'acer': product?.identifier === 'ACER'}">
+</div>
