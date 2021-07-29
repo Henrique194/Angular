@@ -1,10 +1,21 @@
 .header {
     ul {
         list-style-type: none;
-        li {
+        padding: 0;
+        span {
+            position: relative;
+            right: 0px;
+            font-size: larger;
             padding-right: 10px;
-            float: right;
             cursor: pointer;
         }
     }
+}
+
+span {
+    position: relative;
+    right: 0px;
+    font-size: larger;
+    padding-right: 10px;
+    cursor: pointer;
 }
