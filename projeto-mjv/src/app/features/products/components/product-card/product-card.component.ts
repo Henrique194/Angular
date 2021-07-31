@@ -14,5 +14,8 @@ export class ProductCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
+  addToChart(): void {
+    alert(this.product?.name + ' foi adicionado ao carrinho!');
+  }
 }
