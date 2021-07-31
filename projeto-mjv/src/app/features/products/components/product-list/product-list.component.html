@@ -1,6 +1,10 @@
 <div class="products">
     <app-header></app-header>
-    
+
+    <input type="text" placeholder="Search Product">
+    <br>
+    <br>
+
     <app-product-card *ngFor="let product of products"
     [product]=product>
     </app-product-card>
