@@ -1,0 +1,15 @@
+<div class="products">
+    <app-header></app-header>
+
+    <input type="text" placeholder="Search Product" (input)="searchProduct($event)">
+    <br>
+    <br>
+
+    <app-product *ngFor="let product of filteredProducts"
+    [product]=product>
+    </app-product>
+
+    <app-footer></app-footer>
+    
+</div>
+
