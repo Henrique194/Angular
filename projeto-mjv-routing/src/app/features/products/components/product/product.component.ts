@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CapitalizeProductNamePipe } from 'src/app/shared/pipes/capitalize-product-name.pipe';
 import { ProductModel } from '../../models/product.model';
 
 @Component({
@@ -10,25 +11,17 @@ export class ProductComponent implements OnInit {
   @Input()
   product?: ProductModel;
 
-  constructor() { }
+  constructor(private capitalizedPipe: CapitalizeProductNamePipe) { }
 
   ngOnInit(): void {
   }
   
   addToChart(): void {
     if(this.product){
-      const capitalizedName = this.capitalizeProductName(this.product.name);
-      alert(capitalizedName + ' foi adicionado ao carrinho!');
+      const productNameFormatted = this.capitalizedPipe.transform(this.product.name);
+      alert(productNameFormatted + ' foi adicionado ao carrinho!');
     }
     
-  }
-
-  capitalizeProductName(string : string) : string {
-    const firstChar = string.charAt(0).toUpperCase();
-    const spaceIndex = string.search(/\s/);
-    const charAfterSpace = string.charAt(spaceIndex + 1).toUpperCase();
-    const stringFormatted = string.replace(/\w/, `${firstChar}`).replace(/\s\w/, ` ${charAfterSpace}`);
-    return stringFormatted;
   }
 
 }
