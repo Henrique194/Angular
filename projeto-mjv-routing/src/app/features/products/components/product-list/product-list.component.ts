@@ -28,14 +28,15 @@ export class ProductListComponent implements OnInit {
 
   filteredProducts: Array<ProductModel> = this.products;
 
-  searchProduct(event: any): void {
-    //console.log(event);
+  searchProduct(event: any): boolean {
     const input = event.target.value.toLowerCase();
     console. log(input);
     if(input){
       this.filteredProducts = this.products.filter( (product) => product.name.includes(input));
+      return true;
     } else {
       this.filteredProducts = this.products;
+      return false;
     }
 
   }
