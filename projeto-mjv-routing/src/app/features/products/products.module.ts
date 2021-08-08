@@ -4,12 +4,13 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductComponent } from './components/product/product.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductsPageComponent } from './pages/products-page/products-page.component';
-import { RouterModule } from '@angular/router';
+import { ProductDetailPageComponent } from './pages/product-detail-page/product-detail-page.component';
 
 const components = [
   ProductComponent,
   ProductListComponent,
-  ProductsPageComponent
+  ProductsPageComponent,
+  ProductDetailPageComponent,
 ]
 
 @NgModule({
@@ -19,7 +20,6 @@ const components = [
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule
   ]
 })
 export class ProductsModule { }

@@ -1,2 +1,4 @@
-<app-product-list></app-product-list>
-<!-- <p>products-page works!</p> -->
+<app-header></app-header>
+<input class="inputName" type="text" placeholder="Search Product" (input)="searchProductByName($event)"><br><br>
+<app-product-list [products]=products></app-product-list>
+<app-footer></app-footer>
