@@ -37,6 +37,9 @@ export class ProductsService {
     return this.products.filter(product => product.name.includes(name));
   }
 
+  findByName(name: string): ProductModel | undefined {
+    return this.products.find(product => product.name === name);
+  }
   // searchByIdentifier(event: any): boolean { // Array Ou Elemento Do Array?
   //   const input = event.target.value.toUpperCase();
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { ProductModel } from '../../models/product.model';
 import { ProductsService } from '../../service/products.service';
 
@@ -9,11 +9,17 @@ import { ProductsService } from '../../service/products.service';
 export class ProductsPageComponent implements OnInit {
 
   products: Array<ProductModel> = []
+  document: HTMLDocument = this.elementRef.nativeElement.ownerDocument;
 
-  constructor(private productService: ProductsService) { }
+  constructor(
+    private productService: ProductsService,
+    private elementRef: ElementRef,
+    ) { 
+     }
 
   ngOnInit(): void {
     this.products = this.productService.getProducts();
+    // console.log(this.elementRef);
   }
 
   searchProductByName(event: any) {
@@ -22,6 +28,17 @@ export class ProductsPageComponent implements OnInit {
       this.products = this.productService.searchProductByName(input);
     } else {
       this.products = this.productService.getProducts();
+    }
+  }
+
+  generic() {
+    const gen = this.document.getElementById("generic");
+
+    if(gen) {
+      let innerHTML = gen.innerHTML;
+      if(innerHTML === 'generic') gen.innerHTML = 'genericFunction';
+      else gen.innerHTML = 'generic'
+      
     }
   }
 

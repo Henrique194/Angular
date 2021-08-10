@@ -7,7 +7,7 @@ import { ProductsPageComponent } from './features/products/pages/products-page/p
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'products'},
   { path: 'products', component: ProductsPageComponent },
-  { path: 'products/:id', component: ProductDetailPageComponent },
+  { path: 'products-details/:id', component: ProductDetailPageComponent },
   { path: 'login', component: LoginPageComponent },
 ];
 
