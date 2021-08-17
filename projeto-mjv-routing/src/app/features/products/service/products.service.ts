@@ -10,17 +10,20 @@ export class ProductsService {
     { name: 'notebook acer',
       price: 5999,
       img: "https://acerstore.vteximg.com.br/arquivos/ids/156817-900-900/AN515-54.jpg?v=637257706315470000",
-      identifier: 'ACER'
+      identifier: 'ACER',
+      specs: '',
     },
     { name: 'notebook dell',
       price: 3999,
       img: "https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/multiview_new_size_hellcat_5.png",
-      identifier: 'DELL'
+      identifier: 'DELL',
+      specs: '',
     },
     { name: 'notebook samsung',
       price: 2579,
       img: "https://images.samsung.com/is/image/samsung/p6pim/br/xe310xba-kt2br/gallery/br-chromebook-4-xe310xbai-xe310xba-kt2br-337284531?$684_547_PNG$",
-      identifier: 'SAMSUNG'
+      identifier: 'SAMSUNG',
+      specs: '',
     }
   ]
 

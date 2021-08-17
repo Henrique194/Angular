@@ -9,11 +9,11 @@ import { ProductsService } from '../../service/products.service';
 export class ProductsPageComponent implements OnInit {
 
   products: Array<ProductModel> = []
-  document: HTMLDocument = this.elementRef.nativeElement.ownerDocument;
+  // document: HTMLDocument = this.elementRef.nativeElement.ownerDocument;
 
   constructor(
     private productService: ProductsService,
-    private elementRef: ElementRef,
+    // private elementRef: ElementRef,
     ) { 
      }
 
@@ -31,15 +31,15 @@ export class ProductsPageComponent implements OnInit {
     }
   }
 
-  generic() {
-    const gen = this.document.getElementById("generic");
+  // generic() {
+  //   const gen = this.document.getElementById("generic");
 
-    if(gen) {
-      let innerHTML = gen.innerHTML;
-      if(innerHTML === 'generic') gen.innerHTML = 'genericFunction';
-      else gen.innerHTML = 'generic'
+  //   if(gen) {
+  //     let innerHTML = gen.innerHTML;
+  //     if(innerHTML === 'generic') gen.innerHTML = 'genericFunction';
+  //     else gen.innerHTML = 'generic'
       
-    }
-  }
+  //   }
+  // }
 
 }

@@ -1,3 +1,11 @@
-<app-header></app-header>
-<p>login-page works!</p>
-<app-footer></app-footer>
+<div class="login">
+    <form [formGroup]="loginForm">
+        <!-- {{ loginForm.value | json }} -->
+        <input class="loginInput" type="email" placeholder="User's name" formControlName="name"><br><br>
+        <input style="margin-bottom: 9px;" class="loginInput" type="password" placeholder="User's password" formControlName="password">
+        
+    </form>
+    <p *ngIf="logState.failLogin" class="failLogin">Usuário e/ou senha incorretos!</p>
+    <button style="margin-top: 9px;" class="loginButton" (click)="findUser(loginForm)">Entrar</button>
+</div>
+

@@ -39,7 +39,6 @@ export class HeaderComponent implements OnInit {
   private insertUnderlineActivePage(page: string) {
     const hmtlPage: HTMLElement | null = this.document.getElementById(page);
     if(hmtlPage) {
-      
       hmtlPage.style.textDecoration = "underline";
     }
     

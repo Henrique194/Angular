@@ -5,6 +5,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RemoveBoldDirective } from './directives/remove-bold.directive';
 import { CapitalizeProductNamePipe } from './pipes/capitalize-product-name.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 const components = [
   HeaderComponent,
@@ -29,6 +31,7 @@ const directives = [
   imports: [
     CommonModule,
     RouterModule,
+    ReactiveFormsModule
   ],
   providers: [
     CapitalizeProductNamePipe,

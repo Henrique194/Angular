@@ -1,7 +1,8 @@
-<body>
+<!-- Exemplo: https://br-store.acer.com/ -->
+
 <app-header></app-header>
-<p id="generic" (click)=generic()>teste</p>
+<!-- <p id="generic" (click)=generic()>teste</p> -->
 <input class="inputName" type="text" placeholder="Search Product" (input)="searchProductByName($event)"><br><br>
 <app-product-list [products]=products></app-product-list>
 <app-footer></app-footer>
-</body>
+
