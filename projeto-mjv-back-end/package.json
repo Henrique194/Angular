@@ -1,0 +1,25 @@
+{
+  "name": "projeto-mjv-back-end",
+  "version": "1.0.0",
+  "description": "Projeto Para Integração Banck-end",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "ts-node": "^10.2.0",
+    "ts-node-dev": "^1.1.8",
+    "typeorm": "^0.2.37",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.6.1"
+  }
+}
