@@ -4,7 +4,7 @@ export default {
     "port": 5432,
     "username": "postgres",
     "password": "postgres194",
-    "database": "mjv-db",
+    "database": "mjv_db",
     "schema": "mjv-angular",
     "logging": true,
     "entities": [

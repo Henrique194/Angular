@@ -1,8 +1,8 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 
-@Entity("mjv-angular")
-export class product {
+@Entity("produto")
+export class ProductEntity {
     @Column( { type: "boolean" } )
     available!: boolean;
 
@@ -12,7 +12,7 @@ export class product {
     @PrimaryGeneratedColumn( { type: "integer" } )
     id?: number;
 
-    @Column( { type: "varchar", length: 150, nullable: true } )
+    @Column( { name: "img_url", type: "varchar", length: 150, nullable: true } )
     imgUrl?: string;
 
     @Column( { type: "varchar", length: 50 } )
