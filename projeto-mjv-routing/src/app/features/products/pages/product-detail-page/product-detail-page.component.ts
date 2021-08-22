@@ -17,10 +17,16 @@ export class ProductDetailPageComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+
     this.activatedRoute.params.subscribe(param => {
-      this.product = this.productService.findByName(param.id);
-      // console.log(this.product);
-    })
+      this.productService.searchProductByName(param.name).subscribe( product => {
+        console.log(product);
+        
+        this.product = product;
+      }, err => { console.log(err);
+      });
+    });
+
   }
 
 }

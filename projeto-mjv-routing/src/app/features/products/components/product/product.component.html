@@ -1,7 +1,7 @@
 <div class="card" *ngIf="product">
     <h2 style="text-transform: capitalize;">{{ product.name }}</h2>
     <hr>
-    <img [src]=product.img>
+    <img [src]=product.imgUrl>
     <hr>
     <p (click)=addToChart()>Adicionar Ao Carrinho</p>
     <br>

@@ -8,7 +8,7 @@ export class LoginService {
 
   registeredUsers: Array<User> = [
     {
-      name: 'Henrique Jorge',
+      name: 'hen',
       password: '123',
       registrationDate: new Date(),
     },

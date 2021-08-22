@@ -16,7 +16,7 @@ export class ProductService {
         return ProductRepository.getByName(name);
     }
 
-    insertProduct(products: ProductEntity[]) {
+    insertProduct(products: ProductEntity | ProductEntity[]) {
         return ProductRepository.insert(products);
     }
 
@@ -31,6 +31,9 @@ export class ProductService {
 
     async removeProductById(id: number) {
         const foundProduct = await ProductRepository.getById(id);
-        return ProductRepository.remove(foundProduct);
+        if(foundProduct) {
+            return ProductRepository.remove(foundProduct);
+        }
+        return Promise.resolve(undefined);
     }
 }

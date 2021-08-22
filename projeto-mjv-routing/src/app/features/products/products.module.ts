@@ -6,6 +6,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductsPageComponent } from './pages/products-page/products-page.component';
 import { ProductDetailPageComponent } from './pages/product-detail-page/product-detail-page.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 const components = [
   ProductComponent,
@@ -21,7 +22,8 @@ const components = [
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ]
 })
 export class ProductsModule { }

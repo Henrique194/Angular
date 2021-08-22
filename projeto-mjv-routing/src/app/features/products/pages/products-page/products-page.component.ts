@@ -8,26 +8,28 @@ import { ProductsService } from '../../service/products.service';
 })
 export class ProductsPageComponent implements OnInit {
 
-  products: Array<ProductModel> = []
-  // document: HTMLDocument = this.elementRef.nativeElement.ownerDocument;
+  products: ProductModel[] = [];
+  filteredProducts: ProductModel[] = [];
 
   constructor(
-    private productService: ProductsService,
-    // private elementRef: ElementRef,
-    ) { 
+    private productService: ProductsService) { 
      }
 
   ngOnInit(): void {
-    this.products = this.productService.getProducts();
-    // console.log(this.elementRef);
+    this.productService.getProducts().subscribe( products => {
+      this.products = products;
+      this.filteredProducts = this.products;
+    });
+    
+    
   }
 
-  searchProductByName(event: any) {
+  searchProductByName(event: any) {    
     const input = event.target.value.toLowerCase();
     if(input) {
-      this.products = this.productService.searchProductByName(input);
+      this.filteredProducts = this.products.filter(product => product.name.includes(input));
     } else {
-      this.products = this.productService.getProducts();
+      this.filteredProducts = this.products;
     }
   }
 

@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +10,12 @@ export class HeaderComponent implements OnInit {
 
   document: HTMLDocument = this.elementRef.nativeElement.ownerDocument;
   url: string = '';
+  user: boolean = false;
 
   constructor(
      private activedRoute: ActivatedRoute,
      private elementRef: ElementRef,
+     private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -21,6 +23,9 @@ export class HeaderComponent implements OnInit {
     const page = this.findActiveUrl(this.url);
     console.log(this.elementRef);
     this.insertUnderlineActivePage(page);
+    this.validateUser();
+    console.log(this.user);
+    
     
   }
 
@@ -42,6 +47,22 @@ export class HeaderComponent implements OnInit {
       hmtlPage.style.textDecoration = "underline";
     }
     
+  }
+
+  validateUser() {
+    const foundUser = sessionStorage.getItem('user');
+    console.log(foundUser);
+    
+    if(foundUser) {
+      return this.user = true;
+    }
+    return false;
+  }
+
+  logOutUser() {
+    sessionStorage.clear();
+    this.router.navigateByUrl('/login');
+
   }
   
 }

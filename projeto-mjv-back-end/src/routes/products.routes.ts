@@ -1,7 +1,7 @@
 import { Request, Response, Router } from "express";
 import { ProductEntity } from "../entities/product.entity";
 import { ProductService } from "../services/product.service";
-import { queryProductCreator } from "../utils/functions/queryProductCreator.function";
+import { variableRemover } from "../utils/functions/variableRemover.function";
 import { responseEmitter } from "../utils/functions/responseEmitter.function";
 
 const productRouter = Router();
@@ -13,18 +13,14 @@ productRouter.get('/', async (req: Request, res: Response) => {
 })
 
 productRouter.get('/product', async (req: Request, res: Response) => {
-    const name = req.query.name as string;
-    const id = req.query.id as string;
-    if(!name && !id) {
-        res.send("Nenhum Parâmetro Específicado:\nId E Nome Faltando!");
-    } else {
-        const queryProduct = queryProductCreator(name, id);
-        await responseEmitter(res, queryProduct, productService);    
-    }
+    const name = req.query.name;
+    const id = req.query.id;
+    const filteredVariable = variableRemover(name, id);
+    await responseEmitter(productService, res, filteredVariable);    
 });
 
 productRouter.post('/create', async (req: Request, res: Response) => {
-    const receivedProduct = req.body as ProductEntity[];
+    const receivedProduct = req.body;
     await productService.insertProduct(receivedProduct);
     res.send(receivedProduct);
 })
@@ -41,7 +37,10 @@ productRouter.put('/update', async (req: Request, res: Response) => {
 productRouter.delete('/delete/:id', async (req: Request, res: Response) => {
     const id = Number(req.params.id);
     const productRemoved = await productService.removeProductById(id);
-    res.send(productRemoved);
+    if(!productRemoved) {
+        return res.status(404).send( `Não Existe Produto com o Id: ${ id }` );
+    }
+    return res.send(productRemoved);
 });
 
 export default productRouter;

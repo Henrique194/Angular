@@ -4,5 +4,5 @@ export interface ProductModel {
     price: number,
     description: string,
     available: boolean,
-    img: string
+    imgUrl: string
 }

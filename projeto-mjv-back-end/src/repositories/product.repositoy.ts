@@ -1,4 +1,3 @@
-import { getRepository } from "typeorm";
 import { ProductEntity } from "../entities/product.entity";
 import { CRUD } from "../utils/functions/CRUD.function";
 
@@ -16,7 +15,7 @@ export class ProductRepository {
         return CRUD.read( ProductEntity, { where: { name } } );
     }
     
-    static insert(products: ProductEntity[]) {
+    static insert(products: ProductEntity | ProductEntity[]) {
         return CRUD.create(ProductEntity, products);
     }
 
@@ -25,7 +24,7 @@ export class ProductRepository {
     }
 
 
-    static remove(products: ProductEntity[]) {
+    static remove(products: ProductEntity | ProductEntity[]) {
         return CRUD.delete(ProductEntity, products);
     }
 }

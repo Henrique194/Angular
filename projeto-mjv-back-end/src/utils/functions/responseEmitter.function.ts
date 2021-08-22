@@ -1,15 +1,21 @@
 import { Response } from "express";
-import { QueryProductParam } from "../../models/queryProductParam.model";
 import { ProductService } from "../../services/product.service";
 
 
-export async function responseEmitter(res: Response, query: QueryProductParam, productService: ProductService) {
-    if(query.type === "id") {
-        const product = await productService.getProductById(query.id);
-        res.send(product);
-    } else {
-        const product = await productService.getProductByName(query.name);
-        res.send(product);
+export async function responseEmitter<T>(productService: ProductService, res: Response, param: T) {
+    let foundProduct = undefined;
+    const numericRepresentation = Number(param);
+
+    if(!Number.isNaN(numericRepresentation)) {
+        foundProduct = await productService.getProductById(numericRepresentation);
+        return res.send(foundProduct);
     }
-    
+
+    switch(typeof param) {
+        case "string":
+            foundProduct = await productService.getProductByName(param);
+            return res.send(foundProduct);
+        default:
+            return res.status(400).send("Query Param Inválido!");
+    }
 }

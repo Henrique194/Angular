@@ -18,8 +18,10 @@ export class ProductComponent implements OnInit {
   
   addToChart(): void {
     if(this.product){
-      const productNameFormatted = this.capitalizedPipe.transform(this.product.name);
-      alert(productNameFormatted + ' foi adicionado ao carrinho!');
+      console.log(this.product);
+      
+      const formattedProductName = this.capitalizedPipe.transform(this.product.name);
+      alert(formattedProductName + ' foi adicionado ao carrinho!');
     }
     
   }
