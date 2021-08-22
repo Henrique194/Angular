@@ -1,7 +1,8 @@
 export interface ProductModel {
+    id: number,
     name: string,
     price: number,
-    img: string,
-    identifier: string,
-    specs: string,
+    description: string,
+    available: boolean,
+    img: string
 }
