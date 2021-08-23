@@ -1,0 +1,10 @@
+<div class="card" *ngIf="product">
+    <h2 style="text-transform: capitalize;">{{ product.name }}</h2>
+    <hr>
+    <h3> <span style="font-weight: normal;"> Por: </span> {{ product.price | currency: 'BRL'}}</h3>
+    <hr>
+    <img [src]=product.img>
+    <br>
+    <p (click)=addToChart() >Adicionar Ao Carrinho</p>
+    <br>
+</div>
