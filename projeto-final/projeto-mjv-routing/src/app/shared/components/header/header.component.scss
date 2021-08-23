@@ -1,0 +1,16 @@
+.header {
+    .routerLinks {
+        display: flex;
+        // justify-content: flex-end;
+        float: right;
+        font-size: 20px;
+        div {
+            margin-right: 7px;
+            cursor: pointer;
+        };
+        div:hover {
+            text-decoration: underline;
+            font-size: 22px;
+        };
+    }
+}

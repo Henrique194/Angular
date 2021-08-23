@@ -1,0 +1,10 @@
+<div class="login">
+    <form [formGroup]="loginForm" (submit)="findUser(loginForm)">
+        <!-- {{ loginForm.value | json }} -->
+        <input class="loginInput" type="email" placeholder="User's name" formControlName="name"><br><br>
+        <input style="margin-bottom: 9px;" class="loginInput" type="password" placeholder="User's password" formControlName="password"><br><br>
+        <button class="loginButton" type="submit" style="margin-top: 9px;" >Entrar</button>
+    </form>
+    <p *ngIf="logState.failLogin" class="failLogin">Usuário e/ou senha incorretos!</p>
+</div>
+

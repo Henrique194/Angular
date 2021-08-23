@@ -1,0 +1,32 @@
+.card {
+    display: inline-block;
+    margin: 7px;
+    box-shadow: 3px 3px 10px grey;
+    h2 {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+        border: 1px solid black;
+        width: 175px;
+        margin: auto;
+        color: #207567;
+        background-color: #B4D6C1;
+        padding: 5px;
+    }
+
+    p:hover {
+        cursor: pointer;
+    }
+
+    h3 {
+        margin-left: 7px;
+    }
+
+}
+
+img {
+    width:  400px;
+    height: 400px;
+}

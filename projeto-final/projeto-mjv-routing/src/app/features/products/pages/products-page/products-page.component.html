@@ -1,0 +1,15 @@
+<!-- Exemplo: https://br-store.acer.com/ -->
+
+
+<app-header></app-header>
+<!-- <p id="generic" (click)=generic()>teste</p> -->
+<input class="inputName" type="text" placeholder="Search Product" (input)="searchProductByName($event)"><br><br>
+<ng-container class="hasProducts" *ngIf="hasProducts; else noProduct">
+    <app-product-list [products]=filteredProducts></app-product-list>
+    <app-footer></app-footer>
+</ng-container>
+
+<ng-template class="noProducts" #noProduct>
+    <p style="text-align: center; font-size: x-large; color: red; margin-top: 15%;">Nenhum Produto Encontrado!</p>
+    <app-footer style="position: absolute; bottom: 0; right: 0; left: 0;"></app-footer>
+</ng-template>
