@@ -8,8 +8,7 @@ const port = 4201;
 const app = express();
 app.use(express.json());
 app.use(cors());
-app.use(router)
-const service = new ProductService();
+app.use(router);
 
 app.listen(port, async () => {    
     const connectionResult = await connection();

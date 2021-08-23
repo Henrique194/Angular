@@ -1,0 +1,41 @@
+.product {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+.image {
+    margin-left: 280px;
+    width: 600px;
+    height: 600px;
+    box-shadow: 1px 1px 5px grey;
+}
+
+.identifier {
+    margin-left: 70px;
+    // margin-top: 50px;
+}
+
+.about {
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.about:hover {
+    text-decoration: underline;
+    text-decoration-color: rgb(180, 55, 180);
+    text-decoration-thickness: 4px;
+    cursor: pointer;
+}
+
+.description {
+    // display: none;
+    visibility: hidden;
+    position: absolute;
+    font-size: x-large;
+    margin: auto;
+    width: 700px;
+    text-align: justify;
+    transition: visibility 5s;
+}

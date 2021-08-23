@@ -1,4 +1,13 @@
 <app-header></app-header>
-<h1>Nome: {{ product?.name }}</h1>
-<h2>Preço: {{ product?.price }}</h2>
-<img [src]=product?.imgUrl>
+<div class="product">
+    <img class="image" [src]=product?.imgUrl>
+    <span class="identifier"> 
+        <h1 class="name">{{ product?.name }}</h1> 
+        <h2 class="price">Preço: {{ product?.price | currency: 'BRL' }}</h2>
+    </span>
+    
+</div><br><br><br>
+
+<p class="about" (click)="showDescription()">Sobre O Produto</p>
+<div class="description" id="description"> {{ product?.description }} </div><br><br>
+<app-footer></app-footer>

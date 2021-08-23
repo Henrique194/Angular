@@ -13,7 +13,6 @@ export class HeaderComponent implements OnInit {
   user: boolean = false;
 
   constructor(
-     private activedRoute: ActivatedRoute,
      private elementRef: ElementRef,
      private router: Router,
   ) { }

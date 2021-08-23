@@ -7,8 +7,8 @@
         <div *ngIf="user" id="home" routerLink='/products'>Home</div>
         <div *ngIf="!user" id="login" routerLink='/login'>Login</div>
         <div>Contact</div>
-        <div *ngIf="user" (click)="logOutUser()">Sair</div>
-        <div style="margin-right: 0;">About</div>
+        <div *ngIf="user">About</div>
+        <div style="margin-right: 0;" (click)="logOutUser()">Logout</div>
     </div><br><br>
 
     <hr>
